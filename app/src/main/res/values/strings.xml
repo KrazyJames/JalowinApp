@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Jalowin</string>
+    <string name="btnReiniciar">Reiniciar</string>
+    <string name="lblPerdidos">Partidas perdidas:</string>
+</resources>
