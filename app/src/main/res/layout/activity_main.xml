@@ -10,8 +10,8 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/lblPerdidos"
-        android:text="@string/lblPerdidos"
+        android:id="@+id/lblGanadas"
+        android:text="@string/lblGanadas"
         android:textColor="@color/colorAccent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

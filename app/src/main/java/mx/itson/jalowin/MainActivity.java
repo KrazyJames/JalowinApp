@@ -37,11 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ((Button) findViewById(pierde)).setBackgroundResource(R.drawable.icon_calabaza);
             MediaPlayer m = MediaPlayer.create(this, R.raw.girl_scream);
             m.start();
-            c++;
             Toast.makeText(this,"Perdiste :(",Toast.LENGTH_LONG).show();
             ((Vibrator)getSystemService(VIBRATOR_SERVICE)).vibrate(1000);
             setEnableButtons(false);
-            setPerdidos();
+            setGanados();
             revelar(pierde);
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -59,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this,"Ganaste",Toast.LENGTH_LONG).show();
                 MediaPlayer m = MediaPlayer.create(this,R.raw.witches_laugh);
                 m.start();
+                c++;
                 ((Vibrator)getSystemService(VIBRATOR_SERVICE)).vibrate(1000);
                 revelar(pierde);
                 new Handler().postDelayed(new Runnable() {
@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     public void setRandom(){
         r = (int) Math.floor(Math.random()*(9-1+1)+1);
-        //System.out.println(r);
     }
 
     /**
@@ -103,18 +102,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setSombreros();
         setRandom();
         dulces = 0;
-        setPerdidos();
+        setGanados();
         setEnableButtons(true);
     }
 
     /**
-     * Concatena al textview la cantidad de partidas perdidas
+     * Concatena al textview la cantidad de partidas ganadas
      *
      */
-    public void setPerdidos(){
-        TextView lblPerdidos = (TextView) findViewById(R.id.lblPerdidos);
-        String perdidos = this.getResources().getString(R.string.lblPerdidos)+" "+c;
-        lblPerdidos.setText(perdidos);
+    public void setGanados(){
+        TextView lblGanadas = (TextView) findViewById(R.id.lblGanadas);
+        String ganadas = this.getResources().getString(R.string.lblGanadas)+" "+c;
+        lblGanadas.setText(ganadas);
     }
 
     /**
